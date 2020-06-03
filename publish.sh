@@ -1,2 +1,2 @@
-flutter format .
+flutter format bin lib
 flutter pub publish
