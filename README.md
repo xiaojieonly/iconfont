@@ -19,8 +19,8 @@
 
 #### 使用
 
-> `pub global run iconfont`
-
+- > `iconfont`
+- > `pub global run iconfont`
 
 ### 方式2
 
@@ -30,8 +30,8 @@
 
 #### 使用
 
-> `flutter pub global run iconfont`
-
+- > `iconfont`
+- > `flutter pub global run iconfont`
 
 ### 方式3
 
@@ -57,6 +57,9 @@ dev_dependencies:
 -s, --skip    覆盖pubspec.yaml文件，将丢失pubspec.yaml中的注释
 ```
 
+## 常见问题
+
+1. [iconfont command not found](https://dart.dev/tools/pub/cmd/pub-global#running-a-script)
 
 ## 例子
 ![](img/2.png)

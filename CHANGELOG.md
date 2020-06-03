@@ -1,15 +1,19 @@
+## [0.4.1]
+
+添加executables
+
 ## [0.4.0]
 
-update readme
+更新 readme
 
 ## [0.3.0]
 
-fix  
+修复bug  
 
 
 ## [0.2.1]
 
-Format 
+格式化 
 
 
 ## [0.2.0]
