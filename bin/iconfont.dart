@@ -26,5 +26,8 @@ ${argParser.usage}""");
   IconfontConfig.saveYamlPath =
       argResults['skip'] ? "pubspec.yaml" : "pubspec.yaml.g";
 
+  IconfontConfig.dirName = args[0] ?? "";
+  IconfontConfig.cssUrl = args[1] ?? "";
+
   WingsIconfont();
 }

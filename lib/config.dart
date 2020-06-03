@@ -14,6 +14,12 @@ class IconfontConfig {
   /// 保存路径
   static String writePath = 'lib/icons/';
 
+  /// dirName
+  static String dirName = "";
+
+  /// cssUrl
+  static String cssUrl = "";
+
   /// 生成Iconfont文件
   static getIconFontTemp(IconFontModel iconFontModel, String className) {
     String itemContents = "";
@@ -22,7 +28,7 @@ class IconfontConfig {
       String iconName = glyph.fontClass;
 
       itemContents +=
-          """  static const IconData ${formatName("$preName$iconName")}= IconData(0x${glyph.unicode}, fontFamily: _family); //  ${glyph.name}
+          """  static const IconData ${formatName("$preName$iconName")}= IconData(0x${glyph.unicode}, fontFamily: _family); ${glyph.name.isEmpty ? "" : "// ${glyph.name}"}
 """;
     }
 
@@ -34,6 +40,7 @@ import 'package:flutter/material.dart' show IconData;
 
 class $className {
   static const String _family = '${iconFontModel.fontFamily}';
+  
   $className._();
   
 $itemContents

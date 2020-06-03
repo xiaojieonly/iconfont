@@ -7,6 +7,7 @@
 
 1. 支持多个Iconfont项目。
 2. 可自动在 `pubspec.yaml` 中注册字体
+3. 支持 `Font class` 链接生成文件
 
 
 ## 安装
@@ -15,28 +16,17 @@
 
 #### 注册
  
-> `pub global activate iconfont`
+`flutter pub global activate iconfont`
 
 #### 使用
 
-- > `iconfont`
-- > `pub global run iconfont`
+`iconfont` 
+
 
 ### 方式2
 
 #### 注册
- 
-> `flutter pub global activate iconfont`
-
-#### 使用
-
-- > `iconfont`
-- > `flutter pub global run iconfont`
-
-### 方式3
-
-#### 注册
-> 在 `pubspec.yaml` 中添加
+在 `pubspec.yaml` 中添加
 ```yaml
 dev_dependencies:
   iconfont: #latest version
@@ -44,7 +34,7 @@ dev_dependencies:
 
 #### 使用
 
->  `flutter packages pub run iconfont`
+ `flutter packages pub run iconfont`
 
 
 ## 参数
@@ -54,7 +44,7 @@ dev_dependencies:
 -o, --out     生成后文件存放目录
               (defaults to "lib/icons/")
 -h, --help    help
--s, --skip    覆盖pubspec.yaml文件，将丢失pubspec.yaml中的注释
+-s, --skip    直接覆盖pubspec.yaml文件，原pubspec.yaml中的注释将会丢失
 ```
 
 ## 常见问题
@@ -62,6 +52,21 @@ dev_dependencies:
 1. [iconfont command not found](https://dart.dev/tools/pub/cmd/pub-global#running-a-script)
 
 ## 例子
+
+### 场景1
+
+> 通过 `Font css` 链接生成 `Icon` 文件
+
+`iconfont  my_icon //at.alicdn.com/t/font_1500681_sz0skwerbw.css -s`
+
+
+### 场景2
+
+> 下载 `.zip` 文件，手动创建文件夹，将 `iconfont.json` 和 `iconfont.ttf` 文件放入新创建的文件夹中。
+
+`iconfont -s`
+
+## img
 ![](img/2.png)
 ![](img/1.jpg)
 
