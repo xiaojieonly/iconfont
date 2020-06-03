@@ -144,8 +144,6 @@ class WingsIconfont {
   /// 载入css url
   _loadCss() async {
     if (IconfontConfig.dirName.isEmpty || IconfontConfig.cssUrl.isEmpty) {
-      print(IconfontConfig.dirName);
-      print(IconfontConfig.cssUrl);
       return;
     }
 

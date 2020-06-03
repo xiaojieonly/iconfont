@@ -24,4 +24,4 @@ flutter:
           family: myiconfont
           fonts:
             -
-                  asset: assets/fonts/my_icon/iconfont.ttf
+                  asset: assets/fonts/my_coins/iconfont.ttf

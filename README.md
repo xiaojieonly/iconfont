@@ -16,11 +16,11 @@
 
 #### 注册
  
-`flutter pub global activate iconfont`
+`flutter pub global activate iconfont` 或者 `pub global activate iconfont`
 
 #### 使用
 
-`iconfont` 
+`iconfont` 或者 `flutter pub run iconfont`
 
 
 ### 方式2
@@ -34,17 +34,22 @@ dev_dependencies:
 
 #### 使用
 
- `flutter packages pub run iconfont`
+`flutter packages pub run iconfont`
 
 
 ## 参数
 ```text
+-c, --css     font css的链接，例如(http://at.alicdn.com/t/font_1500681_sz0skwerbw.css)
+              (defaults to "")
+-d, --dir     自动生成的assets文件夹名
+              (defaults to "")
 -i, --in      iconfont文件所在目录
               (defaults to "assets/fonts/")
 -o, --out     生成后文件存放目录
               (defaults to "lib/icons/")
 -h, --help    help
--s, --skip    直接覆盖pubspec.yaml文件，原pubspec.yaml中的注释将会丢失
+-s, --skip    覆盖pubspec.yaml文件，将会丢失pubspec.yaml中的注释
+
 ```
 
 ## 常见问题
@@ -57,7 +62,7 @@ dev_dependencies:
 
 > 通过 `Font css` 链接生成 `Icon` 文件
 
-`iconfont  my_icon //at.alicdn.com/t/font_1500681_sz0skwerbw.css -s`
+`iconfont -c http://at.alicdn.com/t/font_1500681_sz0skwerbw.css -d my_coins -s`
 
 
 ### 场景2
