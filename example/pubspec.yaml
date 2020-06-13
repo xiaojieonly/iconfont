@@ -11,8 +11,6 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  iconfont:
-    path: ../
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -20,8 +18,6 @@ environment:
 flutter:
   uses-material-design: true
   fonts:
-    -
-          family: myiconfont
-          fonts:
-            -
-                  asset: assets/fonts/my_coins/iconfont.ttf
+    - family: myiconfont
+      fonts:
+        - asset: assets/fonts/my_icons/iconfont.ttf
