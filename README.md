@@ -2,30 +2,29 @@
 
 只需一行命令，即可快速生成[https://www.iconfont.cn/](https://www.iconfont.cn/)的Icon文件。
 
-
 ## 特点
 
-1. 支持多个Iconfont项目。
+1. 支持多个 `iconfont` 项目。
 2. 可自动在 `pubspec.yaml` 中注册字体
-3. 支持 `Font class` 链接生成文件
+3. 支持 `font class` 链接生成文件
 
 
-## 安装
+## 运行
 
 ### 方式1
 
-#### 注册
+#### 安装
  
 `flutter pub global activate iconfont` 或者 `pub global activate iconfont`
 
 #### 使用
 
-`iconfont` 或者 `flutter pub run iconfont`
+`iconfont`
 
 
 ### 方式2
 
-#### 注册
+#### 安装
 在 `pubspec.yaml` 中添加
 ```yaml
 dev_dependencies:
@@ -58,11 +57,14 @@ dev_dependencies:
 
 ## 例子
 
+- [example](example)
+- [https://0hy3e2.coding-pages.com](https://0hy3e2.coding-pages.com)
+
 ### 场景1
 
 > 通过 `Font css` 链接生成 `Icon` 文件
 
-`iconfont -c http://at.alicdn.com/t/font_1500681_sz0skwerbw.css -d my_coins -s`
+`iconfont -c http://at.alicdn.com/t/font_1500681_sz0skwerbw.css -d my_icons -s`
 
 
 ### 场景2
@@ -71,7 +73,7 @@ dev_dependencies:
 
 `iconfont -s`
 
-## img
-![](img/2.png)
-![](img/1.jpg)
 
+## image
+
+![](img/2.png)
