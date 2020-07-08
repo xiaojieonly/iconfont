@@ -164,42 +164,42 @@ class IconBuild {
   }
 
   /// 添加字体到 pubspec.yaml 中
-  _addYaml2(String family, List<String> iconfontPath) async {
-    Map<String, dynamic> flutter =
-        (pubspecYaml.customFields['flutter'] as Map<String, dynamic>);
-    List<Map<String, String>> iconfontPathMap =
-        iconfontPath.map((e) => {"asset": e}).toList();
-
-    if (flutter.containsKey("fonts")) {
-      List<dynamic> fonts = flutter['fonts'];
-
-      List<dynamic> iconfont = fonts
-          .where((e) => e.containsKey("family") && e["family"] == family)
-          .toList();
-
-      if (iconfont.isEmpty) {
-        // 没有导入过iconfont
-        fonts.add({
-          "family": family,
-          "fonts": iconfontPathMap,
-        });
-      } else {
-        // 导入过iconfont
-        iconfont[0].addAll({
-          "fonts": iconfontPathMap,
-        });
-      }
-    } else {
-      flutter.addAll({
-        "fonts": [
-          {
-            "family": family,
-            "fonts": iconfontPathMap,
-          }
-        ]
-      });
-    }
-
-    File(config.pubspecName).writeAsStringSync(pubspecYaml.toYamlString());
-  }
+//  _addYaml2(String family, List<String> iconfontPath) async {
+//    Map<String, dynamic> flutter =
+//        (pubspecYaml.customFields['flutter'] as Map<String, dynamic>);
+//    List<Map<String, String>> iconfontPathMap =
+//        iconfontPath.map((e) => {"asset": e}).toList();
+//
+//    if (flutter.containsKey("fonts")) {
+//      List<dynamic> fonts = flutter['fonts'];
+//
+//      List<dynamic> iconfont = fonts
+//          .where((e) => e.containsKey("family") && e["family"] == family)
+//          .toList();
+//
+//      if (iconfont.isEmpty) {
+//        // 没有导入过iconfont
+//        fonts.add({
+//          "family": family,
+//          "fonts": iconfontPathMap,
+//        });
+//      } else {
+//        // 导入过iconfont
+//        iconfont[0].addAll({
+//          "fonts": iconfontPathMap,
+//        });
+//      }
+//    } else {
+//      flutter.addAll({
+//        "fonts": [
+//          {
+//            "family": family,
+//            "fonts": iconfontPathMap,
+//          }
+//        ]
+//      });
+//    }
+//
+//    File(config.pubspecName).writeAsStringSync(pubspecYaml.toYamlString());
+//  }
 }

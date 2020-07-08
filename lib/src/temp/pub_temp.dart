@@ -37,15 +37,17 @@ class PubTemp {
                 _getAssetContent(iconfontPath, iconfont[0]['fonts']),
                 PubType.FFFA,
                 family);
-            if (temp.isNotEmpty)
+            if (temp.isNotEmpty) {
               lines.insert(
                   _getLine(lines, "^.*family:\\s*$family\\s*\$") + 1, temp);
+            }
           } else {
             String temp =
                 _getTemp(_getAssetContent(iconfontPath), PubType.FFF, family);
-            if (temp.isNotEmpty)
+            if (temp.isNotEmpty) {
               lines.insert(
                   _getLine(lines, "^.*family:\\s*$family\\s*\$"), temp);
+            }
           }
         }
       }
