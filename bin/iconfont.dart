@@ -22,7 +22,6 @@ void main(List<String> args) {
   }
 
   Config config = Config.fromJson({
-    "pubspecName": "pubspec.yaml",
     "readPath": "assets/fonts/",
     "writePath": "lib/icons/",
     "dirName": "",
@@ -31,8 +30,6 @@ void main(List<String> args) {
 
   config.readPath = argResults['in'];
   config.writePath = argResults['out'];
-  config.pubspecName = argResults['skip'] ? "pubspec.yaml" : "pubspec.yaml.g";
-
   config.dirName = argResults['dir'];
   config.css = argResults['css'];
 

@@ -4,16 +4,12 @@
 class Config {
 /*
 {
-  "pubspecName": "pubspec.yaml.g",
   "readPath": "assets/fonts/",
   "writePath": "lib/icons/",
   "dirName": "",
   "css": ""
 }
 */
-
-  /// 保存pubspec的名字
-  String pubspecName;
 
   /// iconfont 目录
   String readPath;
@@ -29,7 +25,6 @@ class Config {
 
   /// 1
   Config({
-    this.pubspecName,
     this.readPath,
     this.writePath,
     this.dirName,
@@ -38,7 +33,6 @@ class Config {
 
   /// 1
   Config.fromJson(Map<String, dynamic> json) {
-    pubspecName = json["pubspecName"]?.toString();
     readPath = json["readPath"]?.toString();
     writePath = json["writePath"]?.toString();
     dirName = json["dirName"]?.toString();
@@ -48,7 +42,6 @@ class Config {
   /// 1
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = Map<String, dynamic>();
-    data["pubspecName"] = pubspecName;
     data["readPath"] = readPath;
     data["writePath"] = writePath;
     data["dirName"] = dirName;
