@@ -1,4 +1,5 @@
 import 'package:example/icons/my_icons.dart';
+import 'package:example/icons/test_icons.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Icon(MyIcons.MyiconChushi),
+          title: Icon(TestIcons.Testfayinwang),
         ),
         body: Align(
           child: Icon(MyIcons.MyiconZhileng),

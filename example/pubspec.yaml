@@ -14,10 +14,16 @@ dev_dependencies:
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
+#  i
+
+# f
 
 flutter:
   uses-material-design: true
   fonts:
+    - family: my_test
+      fonts:
+        - asset: assets/fonts/test_icons/iconfont.ttf
     - family: myiconfont
       fonts:
         - asset: assets/fonts/my_icons/iconfont.ttf

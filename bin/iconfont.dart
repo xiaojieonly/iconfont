@@ -1,5 +1,5 @@
-import 'package:iconfont/iconfont.dart';
 import 'package:args/args.dart';
+import 'package:iconfont/iconfont.dart';
 
 /// main
 void main(List<String> args) {
@@ -13,11 +13,7 @@ void main(List<String> args) {
     ..addOption('in',
         abbr: 'i', defaultsTo: 'assets/fonts/', help: "iconfont文件所在目录")
     ..addOption('out', abbr: 'o', defaultsTo: 'lib/icons/', help: "生成后文件存放目录")
-    ..addFlag('help', abbr: 'h', negatable: false, help: "help")
-    ..addFlag('skip',
-        abbr: 's',
-        negatable: false,
-        help: "覆盖pubspec.yaml文件，将会丢失pubspec.yaml中的注释");
+    ..addFlag('help', abbr: 'h', negatable: false, help: "help");
 
   ArgResults argResults = argParser.parse(args);
   if (argResults['help']) {
@@ -25,13 +21,24 @@ void main(List<String> args) {
     return;
   }
 
-  IconfontConfig.readPath = argResults['in'];
-  IconfontConfig.writePath = argResults['out'];
-  IconfontConfig.saveYamlPath =
-      argResults['skip'] ? "pubspec.yaml" : "pubspec.yaml.g";
+  Config config = Config.fromJson({
+    "pubspecName": "pubspec.yaml",
+    "readPath": "assets/fonts/",
+    "writePath": "lib/icons/",
+    "dirName": "",
+    "css": "",
+  });
 
-  IconfontConfig.dirName = argResults['dir'];
-  IconfontConfig.cssUrl = argResults['css'];
+  config.readPath = argResults['in'];
+  config.writePath = argResults['out'];
+  config.pubspecName = argResults['skip'] ? "pubspec.yaml" : "pubspec.yaml.g";
 
-  WingsIconfont();
+  config.dirName = argResults['dir'];
+  config.css = argResults['css'];
+
+  try {
+    IconBuild(config).build();
+  } catch (e) {
+    print(e.toString());
+  }
 }
