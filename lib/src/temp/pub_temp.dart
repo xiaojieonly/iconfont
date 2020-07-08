@@ -67,8 +67,7 @@ class PubTemp {
   }
 
   /// _getAssetContent
-  static String _getAssetContent(List<String> iconfontPath,
-      [List mFonts = null]) {
+  static String _getAssetContent(List<String> iconfontPath, [List mFonts]) {
     List list = iconfontPath;
     if (mFonts != null) {
       Set set = iconfontPath.toSet()..removeAll(mFonts.map((e) => e['asset']));
