@@ -9,13 +9,12 @@
 3. 可自动在 `pubspec.yaml` 中注册字体
 4. 支持 `font class` 链接生成文件
 
-
 ## 运行
 
 ### 方式1
 
 #### 安装
- 
+
 `flutter pub global activate iconfont` 或者 `pub global activate iconfont`
 
 #### 使用
@@ -25,7 +24,9 @@
 ### 方式2
 
 #### 安装
+
 在 `pubspec.yaml` 中添加
+
 ```yaml
 dev_dependencies:
   iconfont: #latest version
@@ -36,6 +37,7 @@ dev_dependencies:
 `flutter packages pub run iconfont`
 
 ## 参数
+
 ```text
 -c, --css     font css的链接，例如(http://at.alicdn.com/t/font_1500681_sz0skwerbw.css)
               (defaults to "")
@@ -63,7 +65,6 @@ dev_dependencies:
 > 通过 `Font css` 链接生成 `Icon` 文件
 
 `iconfont -c http://at.alicdn.com/t/font_1500681_sz0skwerbw.css -d my_icons`
-
 
 ### 场景2
 

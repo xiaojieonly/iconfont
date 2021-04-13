@@ -4,9 +4,12 @@
 import 'package:flutter/material.dart' show IconData;
 
 class TestIcons {
-  static const String _family = 'my_test';
+  static const String _family = 'myiconfont';
 
   TestIcons._();
 
-  static const IconData Testfayinwang = IconData(0xe620, fontFamily: _family);
+  static const IconData MyiconChushi = IconData(0xe64f, fontFamily: _family);
+  static const IconData MyiconZhileng = IconData(0xe64b, fontFamily: _family);
+  static const IconData MyiconZhire = IconData(0xe64c, fontFamily: _family);
+  static const IconData MyiconZidong = IconData(0xe7ee, fontFamily: _family);
 }

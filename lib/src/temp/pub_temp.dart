@@ -67,12 +67,13 @@ class PubTemp {
   }
 
   /// _getAssetContent
-  static String _getAssetContent(List<String> iconfontPath, [List mFonts]) {
-    List list = iconfontPath;
-    if (mFonts != null) {
-      Set set = iconfontPath.toSet()..removeAll(mFonts.map((e) => e['asset']));
-      list = set.toList();
+  static String _getAssetContent(List<String> iconfontPath, [List? mFonts]) {
+    if (mFonts == null) {
+      mFonts = [];
     }
+    List list = iconfontPath;
+    Set set = iconfontPath.toSet()..removeAll(mFonts.map((e) => e['asset']));
+    list = set.toList();
     return list.map((e) => '''        - asset: $e''').join("\n");
   }
 

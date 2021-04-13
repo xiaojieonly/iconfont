@@ -1,17 +1,22 @@
 name: iconfont
 description: Dart library to generate Dart model class from IconFont files.
-version: 0.7.3
+version: 1.0.0
 author: chuanci<chuanci@vip.qq.com>
 homepage: https://github.com/chuanci/iconfont
 
 environment:
-  sdk: ">=2.2.2 <3.0.0"
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  pubspec_yaml: ^2.0.1
-  args: ^1.6.0
-  path: ^1.6.4
-  dio: ^3.0.9
+  yaml: ^3.1.0
+  args: ^2.0.0
+  path: ^1.8.0
+  dio: ^4.0.0
+  json_annotation: ^4.0.1
+
+dev_dependencies:
+  json_serializable: ^4.1.0
+  build_runner: ^1.12.2
 
 executables:
   iconfont:

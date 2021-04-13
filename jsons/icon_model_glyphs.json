@@ -1,0 +1,7 @@
+{
+  "icon_id": "$String?",
+  "name": "$String?",
+  "font_class": "$String?",
+  "unicode": "$String?",
+  "unicode_decimal": "$int?"
+}

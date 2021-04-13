@@ -2,13 +2,12 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:iconfont/src/model/config.dart';
-import 'package:iconfont/src/model/icon.dart';
+import 'package:iconfont/models/index.dart';
 import 'package:iconfont/src/temp/icon_temp.dart';
 import 'package:iconfont/src/temp/pub_temp.dart';
 import 'package:iconfont/src/utils.dart';
 import 'package:path/path.dart' as path;
-import 'package:pubspec_yaml/pubspec_yaml.dart';
+import 'package:yaml/yaml.dart';
 
 /// IconBuild
 class IconBuild {
@@ -16,7 +15,7 @@ class IconBuild {
   Config config;
 
   /// pubspecYaml
-  PubspecYaml pubspecYaml;
+  late Map pubspecYaml;
 
   /// <fontFamily,assetPaths>
   Map<String, List<String>> iconfontMap = {};
@@ -28,22 +27,18 @@ class IconBuild {
 
   /// 1
   initPubspecYaml() {
-    this.pubspecYaml = File("pubspec.yaml").readAsStringSync().toPubspecYaml();
+    this.pubspecYaml = json
+        .decode(json.encode(loadYaml(File("pubspec.yaml").readAsStringSync())));
     return this.pubspecYaml;
   }
 
   /// build
-  void build() async {
-    if (this.pubspecYaml == null) {
-      print("not found pubspec.yaml");
-      return;
-    }
-
+  build() async {
     await _downloadFromCss();
 
     await _scanDir(config.readPath);
 
-    await iconfontMap.forEach((key, value) async {
+    iconfontMap.forEach((key, value) async {
       await _addYaml(key, value);
     });
   }
@@ -91,7 +86,7 @@ class IconBuild {
     File(path.joinAll([dir.path, "iconfont.txt"])).writeAsStringSync(url);
 
     await dio.download(
-        Utils.getUrl(ttfUrl), path.joinAll([dir.path, "iconfont.ttf"]));
+        Utils.getUrl(ttfUrl!), path.joinAll([dir.path, "iconfont.ttf"]));
   }
 
   /// 扫描文件夹
@@ -136,12 +131,14 @@ class IconBuild {
         IconModel.fromJson(json.decode(File(jsonPath).readAsStringSync()));
     String tmp = IconTemp.build(Utils.formatName(className), iconFontModel);
 
-    if (iconfontMap.containsKey(iconFontModel.fontFamily)) {
-      iconfontMap[iconFontModel.fontFamily].add(ttfPath);
-    } else {
-      iconfontMap.addAll({
-        iconFontModel.fontFamily: [ttfPath]
-      });
+    if (iconFontModel.fontFamily != null) {
+      if (iconfontMap.containsKey(iconFontModel.fontFamily)) {
+        iconfontMap[iconFontModel.fontFamily]!.add(ttfPath);
+      } else {
+        iconfontMap.addAll({
+          iconFontModel.fontFamily!: [ttfPath]
+        });
+      }
     }
 
     var file = File(savePath);
@@ -154,52 +151,49 @@ class IconBuild {
     print("build $savePath from $ttfPath and $jsonPath");
   }
 
-  /// 添加字体到 pubspec.yaml 中
+  // /// 添加字体到 pubspec.yaml 中
   _addYaml(String family, List<String> iconfontPath) async {
-    await PubTemp.build(
-        family,
-        iconfontPath,
-        () => (initPubspecYaml().customFields['flutter']
-            as Map<String, dynamic>));
+    PubTemp.build(family, iconfontPath,
+        () => (pubspecYaml['flutter'] as Map<String, dynamic>));
   }
 
   /// 添加字体到 pubspec.yaml 中
-//  _addYaml2(String family, List<String> iconfontPath) async {
-//    Map<String, dynamic> flutter =
-//        (pubspecYaml.customFields['flutter'] as Map<String, dynamic>);
-//    List<Map<String, String>> iconfontPathMap =
-//        iconfontPath.map((e) => {"asset": e}).toList();
+//   _addYaml2(String family, List<String> iconfontPath) async {
+//     Map<String, dynamic> flutter =
+//     (pubspecYaml.customFields['flutter'] as Map<String, dynamic>);
+//     List<Map<String, String>> iconfontPathMap =
+//     iconfontPath.map((e) => {"asset": e}).toList();
 //
-//    if (flutter.containsKey("fonts")) {
-//      List<dynamic> fonts = flutter['fonts'];
+//     if (flutter.containsKey("fonts")) {
+//       List<dynamic> fonts = flutter['fonts'];
 //
-//      List<dynamic> iconfont = fonts
-//          .where((e) => e.containsKey("family") && e["family"] == family)
-//          .toList();
+//       List<dynamic> iconfont = fonts
+//           .where((e) => e.containsKey("family") && e["family"] == family)
+//           .toList();
 //
-//      if (iconfont.isEmpty) {
-//        // 没有导入过iconfont
-//        fonts.add({
-//          "family": family,
-//          "fonts": iconfontPathMap,
-//        });
-//      } else {
-//        // 导入过iconfont
-//        iconfont[0].addAll({
-//          "fonts": iconfontPathMap,
-//        });
-//      }
-//    } else {
-//      flutter.addAll({
-//        "fonts": [
-//          {
-//            "family": family,
-//            "fonts": iconfontPathMap,
-//          }
-//        ]
-//      });
-//    }
+//       if (iconfont.isEmpty) {
+//         // 没有导入过iconfont
+//         fonts.add({
+//           "family": family,
+//           "fonts": iconfontPathMap,
+//         });
+//       } else {
+//         // 导入过iconfont
+//         iconfont[0].addAll({
+//           "fonts": iconfontPathMap,
+//         });
+//       }
+//     } else {
+//       flutter.addAll({
+//         "fonts": [
+//           {
+//             "family": family,
+//             "fonts": iconfontPathMap,
+//           }
+//         ]
+//       });
+//     }
 //
-//    File(config.pubspecName).writeAsStringSync(pubspecYaml.toYamlString());
-//  }
+//     File(config.pubspecName).writeAsStringSync(pubspecYaml.toYamlString());
+// //  }
 }

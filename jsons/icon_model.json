@@ -1,0 +1,8 @@
+{
+  "id": "$String?",
+  "name": "$String?",
+  "font_family": "$String?",
+  "css_prefix_text": "$String?",
+  "description": "$String?",
+  "glyphs": "$List<IconModelGlyphs>?"
+}

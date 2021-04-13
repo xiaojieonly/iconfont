@@ -19,11 +19,10 @@ environment:
 # f
 
 flutter:
-  uses-material-design: true
   fonts:
-    - family: my_test
-      fonts:
-        - asset: assets/fonts/test_icons/iconfont.ttf
     - family: myiconfont
       fonts:
+        - asset: assets/fonts/test_icons/iconfont.ttf
         - asset: assets/fonts/my_icons/iconfont.ttf
+        - asset: assets/fonts/my_icons1/iconfont.ttf
+  uses-material-design: true

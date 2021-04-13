@@ -1,0 +1,6 @@
+{
+  "readPath": "$String",
+  "writePath": "$String",
+  "dirName": "$String",
+  "css": "$String"
+}

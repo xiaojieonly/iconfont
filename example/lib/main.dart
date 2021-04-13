@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Icon(TestIcons.Testfayinwang),
+          title: Icon(TestIcons.MyiconZhire),
         ),
         body: Align(
           child: Icon(MyIcons.MyiconZhileng),
