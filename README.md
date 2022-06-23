@@ -15,7 +15,13 @@
 
 #### 安装
 
-`flutter pub global activate iconfont` 或者 `pub global activate iconfont`
+`flutter pub global activate iconfont` 或者 `dart pub global activate iconfont`
+
+指定版本安装
+`flutter pub global activate iconfont $version` 或者 `dart pub global activate iconfont $version`
+
+#### 卸载
+`flutter pub global deactivate iconfont` 或者 `dart pub global deactivate iconfont`
 
 #### 使用
 
@@ -68,13 +74,13 @@ dev_dependencies:
 
 > 通过 `Font css` 链接生成 `Icon` 文件
 
-`iconfont -c http://at.alicdn.com/t/font_1500681_sz0skwerbw.css -d my_icons`
+运行 `iconfont -c http://at.alicdn.com/t/font_1500681_sz0skwerbw.css -d my_icons`
 
 ### 场景2
 
 > 下载 `.zip` 文件，手动创建文件夹，将 `iconfont.json` 和 `iconfont.ttf` 文件放入新创建的文件夹中。
 
-`iconfont`
+运行 `iconfont`
 
 ### 场景3
 

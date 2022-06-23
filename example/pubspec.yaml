@@ -34,13 +34,10 @@ iconfont:
   
 flutter:
   fonts:
+    - family: myiconfont
+      fonts:
+        - asset: assets/fonts/my_icons/iconfont.ttf
+        - asset: assets/fonts2/test_icons/iconfont.ttf
     - family: iconfont
       fonts:
         - asset: assets/fonts/my_icons2/iconfont.ttf
-    - family: myiconfont
-      fonts:
-        - asset: assets/fonts0/my_icons/iconfont.ttf
-        - asset: assets/fonts1/test_icons/iconfont.ttf
-        - asset: assers/fonts2/test_icons/iconfont.ttf
-        - asset: assets/fonts/my_icons/iconfont.ttf
-        - asset: assets/fonts2/test_icons/iconfont.ttf

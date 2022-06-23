@@ -1,3 +1,6 @@
+## [2.0.0]
+修改: 完善文档
+
 ## [2.0.0-pre1]
 新增: --package -p 配置fontPackage
 新增: --config 配置文件
