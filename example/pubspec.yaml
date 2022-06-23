@@ -11,18 +11,36 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  iconfont:
+    path: ..
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
-#  i
 
-# f
+iconfont:
+  - icons: 
+    - css: //at.alicdn.com/t/font_1500681_sz0skwerbw.css
+      dir: test_icons
+    in: assets/fonts2
+    out: lib/icons/
 
+  - icons: 
+    - css: //at.alicdn.com/t/font_1500681_sz0skwerbw.css
+      dir: my_icons
+
+  - icons:
+    - css: //at.alicdn.com/t/font_1932408_c19dd499jfh.css
+      dir: my_icons2
+  
 flutter:
   fonts:
+    - family: iconfont
+      fonts:
+        - asset: assets/fonts/my_icons2/iconfont.ttf
     - family: myiconfont
       fonts:
-        - asset: assets/fonts/test_icons/iconfont.ttf
+        - asset: assets/fonts0/my_icons/iconfont.ttf
+        - asset: assets/fonts1/test_icons/iconfont.ttf
+        - asset: assers/fonts2/test_icons/iconfont.ttf
         - asset: assets/fonts/my_icons/iconfont.ttf
-        - asset: assets/fonts/my_icons1/iconfont.ttf
-  uses-material-design: true
+        - asset: assets/fonts2/test_icons/iconfont.ttf

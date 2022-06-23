@@ -1,2 +1,3 @@
-export 'models/index.dart';
-export 'src/icon_build.dart';
+export 'src/iconfont_builder.dart';
+export 'src/iconfont_config.dart';
+export 'src/constants.dart';

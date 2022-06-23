@@ -1,0 +1,24 @@
+- icons: 
+    - css: //at.alicdn.com/t/font_1500681_sz0skwerbw.css
+      dir: my_icons
+      package: myPackage
+  in: assets/fonts0/
+  out: lib/xxicon
+
+- icons: 
+    - css: //at.alicdn.com/t/font_1500681_sz0skwerbw.css
+      dir: test_icons
+  in: assets/fonts1/
+  out: lib/xxicon
+
+- icons: 
+    - css: //at.alicdn.com/t/font_1500681_sz0skwerbw.css
+      dir: test_icons
+  in: assers/fonts2
+  out: lib/icons/
+
+- icons: 
+    - css: //at.alicdn.com/t/font_1500681_sz0skwerbw.css
+      dir: my_icons
+  # in: assert/fonts3/
+  # out: lib/icons/

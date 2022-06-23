@@ -17,10 +17,10 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: Icon(TestIcons.MyiconZhire),
+          title: Icon(TestIcons.Myicon_Zhire),
         ),
         body: Align(
-          child: Icon(MyIcons.MyiconZhileng),
+          child: Icon(MyIcons.Myicon_Zhileng),
         ),
       ),
     );

@@ -5,11 +5,11 @@ import 'package:flutter/material.dart' show IconData;
 
 class MyIcons {
   static const String _family = 'myiconfont';
-
+  
   MyIcons._();
-
-  static const IconData MyiconChushi = IconData(0xe64f, fontFamily: _family);
-  static const IconData MyiconZhileng = IconData(0xe64b, fontFamily: _family);
-  static const IconData MyiconZhire = IconData(0xe64c, fontFamily: _family);
-  static const IconData MyiconZidong = IconData(0xe7ee, fontFamily: _family);
+  
+  static const IconData Myicon_Chushi = IconData(0xe64f, fontFamily: _family); 
+  static const IconData Myicon_Zhileng = IconData(0xe64b, fontFamily: _family); 
+  static const IconData Myicon_Zhire = IconData(0xe64c, fontFamily: _family); 
+  static const IconData Myicon_Zidong = IconData(0xe7ee, fontFamily: _family); 
 }
