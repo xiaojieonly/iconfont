@@ -79,7 +79,7 @@ class IconFontGlyph {
     iconId = json['icon_id'];
     fontClass = json['font_class'];
     unicode = json['unicode'];
-    unicodeDecimal = json['unicode_decimal'];
+    unicodeDecimal = json['unicode_decimal']?.toString();
     name = json['name'];
   }
 
